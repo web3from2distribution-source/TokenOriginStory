@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 Advisory: Telarian Cresce Quezert Origin</title>
+    <style>
+        /* CORE BACKGROUND STYLING (Lava/Water/Steam Genesis) */
+        body {
+            /* Tri-color gradient: Lava (top) -> Transition -> Water (bottom) */
+            background: linear-gradient(
+                to bottom,
+                #290202 0%,      /* Deep Lava Rock */
+                #0c0000 30%,      /* Darkened Cooling Zone */
+                #05051a 80%,      /* Deep Water Transition */
+                #000033 100%      /* Abyssal Deep */
+            );
+            color: #E0E0E0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 200vh; /* Increased height to better show the water/land depth */
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* STEAM EFFECT (Horizontal line where lava meets water) */
+        body::before {
+            content: '';
+            position: absolute;
+            bottom: 25%; /* Positioned above the deepest water zone */
+            width: 100%;
+            height: 50px;
+            /* White/grey blurred shadows create the steam/mist effect */
+            box-shadow: 
+                0 0 10px 5px rgba(255, 255, 255, 0.1), 
+                0 0 20px 10px rgba(173, 216, 230, 0.1),
+                0 0 30px 15px rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.05);
+            pointer-events: none;
+            z-index: 5;
+            filter: blur(5px);
+        }
+
+        /* LAVA/LAND STRUCTURES (Jagged edges to show hardened rock) */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            /* Use a jagged shape and gradient to simulate cooling rock structures */
+            background: 
+                linear-gradient(135deg, #FF4500 0%, transparent 10%),
+                linear-gradient(225deg, #4a0505 0%, transparent 10%),
+                linear-gradient(315deg, #8b0000 0%, transparent 10%);
+            mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M0 0 H100 V100 C90 95, 80 100, 70 95, 60 100, 50 95, 40 100, 30 95, 20 100, 10 95, 0 100 Z'/%3E%3C/svg%3E");
+            mask-size: 100% 50%;
+            mask-repeat: no-repeat;
+            mask-position: bottom;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* MAIN CONTENT CONTAINER (The solid, new land Kathar emerges onto) */
+        .premium-container {
+            width: 95%;
+            max-width: 1000px;
+            background-color: rgba(18, 0, 0, 0.98); 
+            border: 4px solid #FF4500;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.9),
+                        0 0 40px rgba(139, 0, 0, 0.8); 
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            z-index: 10;
+        }
+        
+        /* Text and Titles */
+        .token-name {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 5px;
+            background: linear-gradient(90deg, #FF4500 0%, #FF00FF 40%, #00FFFF 70%, #FFFFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(255, 69, 0, 0.9);
+            letter-spacing: 2px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #FFBB77; 
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        h3 {
+            color: #00FFFF; 
+            margin-top: 30px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            text-align: left;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Narrative Text */
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: left;
+        }
+        
+        .highlight {
+            color: #00FFFF; 
+            font-weight: bold;
+        }
+        
+        .key-figure {
+            color: #FF4500; 
+            font-weight: bold;
+            text-shadow: 0 0 5px #FF8C00;
+        }
+
+        /* Video/Token Container (Iridescent/Glass Look) */
+        .video-wrapper {
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto 40px;
+            padding: 15px;
+            /* Iridescent Border using multiple box shadows */
+            border: 2px solid #FF69B4;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 0 15px #FF0000, 0 0 30px #FF7F00, 0 0 45px #FFFF00, 
+                0 0 60px #0000FF, 0 0 75px #4B0082; /* Full spectrum glow */
+            background: rgba(255, 255, 255, 0.05); 
+            transition: all 0.5s ease-in-out;
+        }
+        
+        video {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .token-name {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            .video-wrapper {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="premium-container">
+        
+        <div class="header">
+            <h1 class="token-name">THE TELARIAN CRESCE QUEZERT</h1>
+            <h2>Origin: The Wisdom of Kathar from the Abyssal Deep</h2>
+        </div>
+
+        <div class="video-wrapper">
+            <!-- 
+                NOTE: You must replace this placeholder with the public URL 
+                of your uploaded video file (1000000476.mp4). This video is the visual token itself.
+            -->
+            <video controls autoplay loop muted playsinline>
+                <source src="[INSERT PUBLIC URL OF 1000000476.mp4 HERE]" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="narrative">
+            
+            <h3>🌊 The Genesis of the Web3 Variable by Kathar</h3>
+
+            <p>
+                The **Telarian Cresce Quezert** did not descend from the stars; it emerged from the silent, crushing pressures of the deepest ocean trenches. The moment of its genesis is depicted in the background: the primordial lava of creation meeting the abyssal sea, hardening to form the new digital land upon which Web3 is built.
+            </p>
+
+            <p>
+                The token's namesake, the Abyssal Guide <span class="key-figure">Kathar</span>, ascended at this very junction. As the lava cooled and **new land was forged** from the contact with the cool water, **Kathar** revealed the **Web3 Variable**. This principle defines the dynamic, powerful element of community and strategic influence—the core metric the **TCQZT-W3 Token** is designed to measure and reward.
+            </p>
+            
+            <p>
+                The image you see is the token itself—a transparent, rainbow-hued piece of crystallized wisdom. It captures <span class="key-figure">Kathar</span> (the figure of structured organization) emerging from the boundless, primary data stream represented by the **Cosmic Whale**. The token serves as the lens through which we master the Variable, channeling influence into strategic knowledge for the decentralized frontier.
+            </p>
+
+            <p>
+                The **Telarian Cresce Quezert** is the physical manifestation of the lesson taught by the deep. It is the key to mastering the Web3 Variable, with the constant reminder that true innovation requires both the fire of creation and the depth of wisdom.
+            </p>
+            
+            <div class="text-center">
+                <p class="highlight"><strong>Telarian Cresce Quezert: Mastery of the Web3 Variable, with the guidance of Kathar.</strong></p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
