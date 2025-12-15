@@ -22,7 +22,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 200vh; /* Increased height to better show the water/land depth */
+            min-height: 200vh; 
             position: relative;
             overflow-x: hidden;
         }
@@ -31,7 +31,7 @@
         body::before {
             content: '';
             position: absolute;
-            bottom: 25%; /* Positioned above the deepest water zone */
+            bottom: 25%; 
             width: 100%;
             height: 50px;
             /* White/grey blurred shadows create the steam/mist effect */
@@ -53,7 +53,6 @@
             left: 0;
             width: 100%;
             height: 60%;
-            /* Use a jagged shape and gradient to simulate cooling rock structures */
             background: 
                 linear-gradient(135deg, #FF4500 0%, transparent 10%),
                 linear-gradient(225deg, #4a0505 0%, transparent 10%),
@@ -134,8 +133,8 @@
             text-shadow: 0 0 5px #FF8C00;
         }
 
-        /* Video/Token Container (Iridescent/Glass Look) */
-        .video-wrapper {
+        /* IMAGE/TOKEN CONTAINER STYLING */
+        .image-wrapper {
             width: 100%;
             max-width: 550px;
             margin: 0 auto 40px;
@@ -151,10 +150,11 @@
             transition: all 0.5s ease-in-out;
         }
         
-        video {
+        .token-image {
             width: 100%;
             display: block;
             border-radius: 12px;
+            /* Ensure the image scales correctly within the wrapper */
         }
         
         /* Responsive adjustments */
@@ -165,7 +165,7 @@
             h2 {
                 font-size: 1.2rem;
             }
-            .video-wrapper {
+            .image-wrapper {
                 max-width: 90%;
             }
         }
@@ -180,15 +180,8 @@
             <h2>Origin: The Wisdom of Kathar from the Abyssal Deep</h2>
         </div>
 
-        <div class="video-wrapper">
-            <!-- 
-                NOTE: You must replace this placeholder with the public URL 
-                of your uploaded video file (1000000476.mp4). This video is the visual token itself.
-            -->
-            <video controls autoplay loop muted playsinline>
-                <source src="[watermark-2025-12-07-163851538.mp4]" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="image-wrapper">
+            <img class="token-image" src="[INSERT PUBLIC URL OF IMAGE HERE]" alt="Telarian Cresce Quezert Token Image featuring Kathar and Cosmic Whale">
         </div>
 
         <div class="narrative">
