@@ -1,0 +1,182 @@
+/* THEME: THREE FROM TWO (WEB3 TRANSITION)
+   PALETTE: Obsidian Black, Metallic Gold, Crimson Red 
+*/
+
+:root {
+    --gold-primary: #D4AF37;
+    --gold-highlight: #FDD017;
+    --gold-shadow: #8A6E2F;
+    --red-accent: #8B0000; /* Deep Crimson */
+    --red-bright: #b30000;
+    --black-bg: #050505;
+    --black-card: #0a0a0a;
+    --text-main: #E0E0E0;
+    --text-muted: #A0A0A0;
+}
+
+/* BACKGROUND STYLING (Diamond/Argyle Pattern) */
+body {
+    background-color: var(--black-bg);
+    /* Creates the subtle diamond pattern from the reference image */
+    background-image: 
+        linear-gradient(135deg, #111 25%, transparent 25%),
+        linear-gradient(225deg, #111 25%, transparent 25%),
+        linear-gradient(45deg, #111 25%, transparent 25%),
+        linear-gradient(315deg, #111 25%, transparent 25%);
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 40px 40px;
+    background-repeat: repeat;
+    
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* MAIN CONTENT CONTAINER */
+.premium-container {
+    width: 90%;
+    max-width: 900px;
+    background-color: var(--black-card);
+    
+    /* The Signature "Three From Two" Border Style */
+    border: 1px solid var(--gold-shadow);
+    border-top: 4px solid var(--red-accent); /* The Red Top Line */
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    padding: 50px 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+}
+
+/* Decorative Gold Line under Header (Simulates the line in the image) */
+.premium-container::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+    margin: 40px auto 0 auto;
+}
+
+/* TYPOGRAPHY */
+
+/* Main Title - Metallic Gold Gradient */
+.token-name {
+    font-family: 'Cinzel', serif; /* Serif font for premium look */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    background: linear-gradient(
+        to bottom,
+        var(--gold-highlight) 0%, 
+        var(--gold-primary) 50%, 
+        var(--gold-shadow) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Subtitle */
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #222;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Section Headers */
+h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-primary);
+    margin-top: 30px;
+    font-size: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gold-shadow);
+    padding-bottom: 10px;
+}
+
+/* NARRATIVE TEXT */
+p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: left;
+    color: #ccc;
+}
+
+/* Highlights */
+.highlight {
+    color: var(--gold-highlight);
+    font-weight: 600;
+    border-left: 3px solid var(--red-accent);
+    padding-left: 10px;
+    display: block;
+    margin-top: 20px;
+}
+
+.key-figure {
+    color: var(--red-bright); /* Kathar is now Red */
+    font-weight: bold;
+}
+
+/* IMAGE WRAPPER */
+.image-wrapper {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    padding: 5px;
+    
+    /* Gold Border instead of Rainbow */
+    border: 1px solid var(--gold-primary);
+    background: #000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1); 
+    
+    position: relative;
+}
+
+/* Corner Accents for Image (Optional tech feel) */
+.image-wrapper::before, .image-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--red-accent);
+    transition: all 0.3s ease;
+}
+.image-wrapper::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.image-wrapper::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+.token-image {
+    width: 100%;
+    display: block;
+    border: 1px solid #222;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .premium-container {
+        width: 95%;
+        padding: 30px 20px;
+        border-top: 3px solid var(--red-accent);
+    }
+    .token-name {
+        font-size: 1.8rem;
+    }
+}
